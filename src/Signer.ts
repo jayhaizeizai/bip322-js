@@ -20,7 +20,7 @@ class Signer {
      * @param network Network that the address is located, defaults to the Bitcoin mainnet
      * @returns BIP-322 simple signature, encoded in base-64
      */
-    public static sign(privateKey: string, address: string, message: string, network: bitcoin.Network = bitcoin.networks.bitcoin) {
+    public static sign(privateKey: string, address: string, message: string, network: bitcoin.Network = bitcoin.networks.testnet) {
         // Initialize private key used to sign the transaction
         const ECPair = ECPairFactory(ecc);
         let signer = ECPair.fromWIF(privateKey, network);
